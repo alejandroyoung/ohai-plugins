@@ -80,18 +80,19 @@ suites:
   run_list:
     - recipe[build-essential]
     - recipe[git]
-    - recipe[apache2]
     - recipe[mysql::client]
     - recipe[mysql::server]
     - recipe[ohai_plugins_test::default]
     - recipe[ohai_plugins_test::postfix]
     - recipe[ohai_plugins_test::vhosts]
     - recipe[ohai_plugins_test::wordpress]
+    - recipe[ohai_plugins_test::magento]
     - recipe[ohai_plugins_test::sophos]
   attributes:
     apt:
       compile_time_update: true
     build_essential:
+      compile_time: true
       compiletime: true
     mysql:
       server_root_password: passw0rd
@@ -104,3 +105,5 @@ suites:
         ref: <%= ENV['OHAI_VERSION'] || "HEAD" %>
     wordpress:
       server_name: wordpress.example.com
+    magento:
+      server_name: magento.example.com
