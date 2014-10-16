@@ -3,7 +3,7 @@ Ohai.plugin(:Reboots) do
   provides 'reboots'
 
   collect_data(:linux) do
-    so = shell_out("last")
+    so = shell_out('last')
     if so
       lines = so.stdout.split(/\n/).reject(&:empty?)[2..-1]
     end

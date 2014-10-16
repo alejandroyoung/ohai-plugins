@@ -9,8 +9,8 @@ describe 'Reboots Plugin' do
       expect(reboots).to be_a(Array)
   end
 
-#  it 'should have a value' do
-#    expect(vulnerabilities.keys).not_to be_empty
-#  end
+  it 'should have a value' do
+    expect(reboots.keys).not_to be_empty
+  end
 end
 
